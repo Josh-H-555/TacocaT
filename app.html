@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
     <head>
-        <title>{APPNAME}: A Coding Project By Josh Hutchinson</title>
+        <title>TacocaT: A Coding Project By Josh Hutchinson</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,8 +23,7 @@
         <nav class="navbar navbar-expand-md navbar-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
-                    <img src="img/drawing.png" alt="My Logo" width="30px" class="d-inline-block align-text-top"> APP
-                    NAME
+                    <img src="img/drawing.png" alt="My Logo" width="30px" class="d-inline-block align-text-top"> TacocaT
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +41,8 @@
                             <a class="nav-link" href="code.html">The Code</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                            <a class="nav-link" target="_blank" href="https://github.com/Josh-H-555/TacocaT">Git
+                                Repo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" target="_blank" href="#">About Me</a>
@@ -53,10 +53,34 @@
         </nav>
 
         <main class="flex-shrink-0">
-            <div class="container">
-                <h1 class="mt-5">Template with dark fixed navbar and sticky footer</h1>
-                <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and
-                    CSS. A fixed navbar has been added with padding-top: 60px; on the main > .container.</p>
+            <div class="container mt-5">
+                <div class="row row-cols-1 row-cols-md-2">
+                    <div class="col">
+                        <h1 class="display-5 fw-bold">TacocaT</h1>
+                        <h2 class="fw-bold">Palindrome Time</h2>
+                        <h3 class="lead">A Javascript exercise to determine if
+                            a given string is a palindrome.
+                        </h3>
+                    </div>
+                    <div class="col mt-2">
+                        <h5 class="border-bottom border-1 border-danger pb-2">Enter a string:</h5>
+                        <form action="" class="row">
+                            <div class="col">
+                                <input type="text" id="userInput" class="form-control" placeholder="Enter text here">
+                            </div>
+                            <div class="col-12 text-end pt-2">
+                                <button id="buttonSubmit" type="button"
+                                    class="btn btn-outline-info">Palindrome?</button>
+                            </div>
+                            <div class="alert mt-5 invisible fade show" id="alert" role="alert">
+                                <h4 class="alert-heading">Magic!</h4>
+                                <p class="mb-0" id="message">
+                                    <!-- message inserted here -->
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </main>
 
