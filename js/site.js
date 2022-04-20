@@ -35,7 +35,7 @@ function checkPalindrome(isolatedString) {
     return true;
 }
 
-function checkPalindrome(isolatedString, poop) {
+function checkPalindrome(isolatedString, stringLength) {
 
     let stringLength = isolatedString.length;
 

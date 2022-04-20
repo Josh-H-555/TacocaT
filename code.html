@@ -24,7 +24,8 @@
         <nav class="navbar navbar-expand-md navbar-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
-                    <img src="img/drawing.png" alt="My Logo" width="30px" class="d-inline-block align-text-top"> TacocaT
+                    <img src="img/Dark Logo Transparent (White).png" alt="My Logo" width="30px"
+                        class="d-inline-block align-text-top"> TacocaT
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,9 +61,83 @@
                     <div class="col-md-8">
                         <pre class="line-numbers">
                             <code class="language-javascript">
-                                //Call Hello World
-                                function HelloWorld() {
-                                    alert("Hello world!");
+                                //Instantiate event listener
+                                document.getElementById("buttonSubmit").addEventListener("click", getValues);
+                                
+                                document.getElementById("alert").classList.add("invisible");
+                                
+                                //getValues
+                                function getValues() {
+                                
+                                
+                                    let inputString = document.getElementById("userInput").value;
+                                
+                                    let palindrome = false;
+                                
+                                    if (inputString) {
+                                        isolatedString = inputString.replace(/[^a-zA-Z\\s]/gi, '').toLowerCase();
+                                        isolatedString = isolatedString.replace(/\\/gi, '');
+                                        palindrome = checkPalindrome(isolatedString);
+                                        displayPalindrome(inputString, isolatedString, palindrome);
+                                    } else {
+                                        alert("Please enter a string.");
+                                    }
+                                }
+                                
+                                //checkPalindrome
+                                function checkPalindrome(isolatedString) {
+                                
+                                    let stringLength = isolatedString.length;
+                                
+                                    for (let i = 0; i < Math.floor(stringLength / 2); ++i) {
+                                        if (isolatedString[i] != isolatedString[stringLength - i - 1]) {
+                                            return false;
+                                        }
+                                    }
+                                
+                                    return true;
+                                }
+                                
+                                function checkPalindrome(isolatedString, stringLength) {
+                                
+                                    let stringLength = isolatedString.length;
+                                
+                                    for (let i = 0; i < Math.floor(stringLength / 2); ++i) {
+                                        if (isolatedString[i] != isolatedString[stringLength - i - 1]) {
+                                            return false;
+                                        }
+                                    }
+                                
+                                    return true;
+                                }
+                                
+                                function checkPalindrome() {
+                                
+                                    let stringLength = isolatedString.length;
+                                
+                                    for (let i = 0; i < Math.floor(stringLength / 2); ++i) {
+                                        if (isolatedString[i] != isolatedString[stringLength - i - 1]) {
+                                            return false;
+                                        }
+                                    }
+                                
+                                    return true;
+                                }
+                                
+                                //displayPalindrome
+                                function displayPalindrome(inputString, isolatedString, palindrome) {
+                                    message = document.getElementById("message");
+                                    alertBox = document.getElementById("alert");
+                                
+                                    if (palindrome) {
+                                        message.innerHTML = `The string you entered "${isolatedString}" is a palindrome!`;
+                                        alertBox.classList.add("alert-success");
+                                        alertBox.classList.remove("invisible");
+                                    } else {
+                                        message.innerHTML = `The string you entered "${isolatedString}" is not a palindrome.`;
+                                        alertBox.classList.add("alert-danger");
+                                        alertBox.classList.remove("invisible");
+                                    }
                                 }
                             </code>
                         </pre>
@@ -84,14 +159,24 @@
                             whether the input is a palindrome, and display whether it is or not.
                             <br>
                             <br>
-                            <strong>function 2</strong>
+                            <strong>checkPalindrome</strong>
                             <br>
-                            function 2 purpose
+                            To check for a palindrome, we need to compare whether the letters
+                            at the opposite end of the word are the same, and continue to check
+                            if letters are the same moving inward. Intuitively, we only need to
+                            check half of the string, as if we subtract 'i - 1', we will get the
+                            corresponding value index to the opposite letter. We use the Math.floor
+                            function to give us a whole number the event the word has an odd
+                            number of letters. If the number of letters is odd, we don't need to
+                            check the middle letter, as the indices will hone in on that single letter.
+                            If we find a mismatch, we immediately return false for more efficiency.
                             <br>
                             <br>
-                            <strong>function 3</strong>
+                            <strong>displayPalindrome</strong>
                             <br>
-                            function 3 purpose
+                            Will check if the word is a palindrome. If it is, the alert box will be
+                            green, if it's not, the alert box will be red. Will print a message
+                            corresponding to whether it is true or false.
                         </p>
                     </div>
                 </div>
@@ -106,7 +191,7 @@
                         <span class="text-muted">© 2022 Josh Hutchinson</span>
                     </div>
                     <div class="col text-center align-items-center">
-                        <img src="img/drawing.png" alt="My Logo" height="25px">
+                        <img src="img/Dark Logo Transparent (White).png" alt="My Logo" height="35px">
                     </div>
                     <!-- align items is your vertical alignment, justify content is your horizontal alignment -->
                     <div class="col d-flex justify-content-md-end justify-content-center align-items-center">
